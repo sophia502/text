@@ -1,0 +1,172 @@
+/*  header开始    */
+#header{
+    background: url(../img/banner.jpg) center no-repeat;
+    height: 600px;
+    position: relative;
+}
+.wrapper{
+    width: 1140px;
+    height: 100%;
+    /*background: #cccccc;*/
+    margin: 0 auto;
+}
+
+.main-header{
+    height: 100px;
+    /*background: #ffb994;*/
+    line-height: 100px;
+}
+
+.top,#header a{
+    color: #ffffff;
+}
+#login a{
+    float: left;
+    height: 60px;
+}
+#login a:hover{
+border-bottom: 1px solid #fff;
+}
+#car {
+    float: right;
+    width: 200px;
+    height: 30px;
+    background: #000;
+    text-align: center;
+    padding: 10px 20px;
+    opacity: 0.5;
+    filter:alpha(opacity=50);
+    cursor: pointer;
+    margin-top: 25px;
+    line-height: 30px;
+}
+#clear-car{
+    color: #ffffff;
+    width: 100px;
+    height: 25px;
+    position: absolute;
+    top: 35px;
+    right: 130px;
+    cursor: pointer;
+}
+#header h1{
+    padding-left: 230px;
+    text-align: center;
+}
+#header img{
+    vertical-align: middle;
+}
+#nav li{
+    width: 190px;
+    height: 40px;
+    background: #fa558f;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+}
+#nav li:hover{
+    background:#3c3b3b;
+}
+#nav .select{
+    background: rgba(67, 67, 67, 0.93);
+}
+#nav a{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+#submenu{
+    width: 1140px;
+    height: 300px;
+    background: #ccc;
+    margin-left: -190px;
+    text-align: left;
+    display: none;
+}
+#makeup:hover #submenu{
+    display: block;
+}
+#submenu .neirong{
+    float: left;
+    margin-left: 50px;
+    /*border-bottom: 1px solid #000;*/
+}
+/*  header结束  */
+
+/*  new-product开始  */
+#new-product{
+    margin-top: 56px;
+    height: 266px;
+}
+#new-product h4{
+    margin-top: 150px;
+    margin-left: 200px;
+    color: #fff;
+    font-size: 30px;
+}
+#new-product .sale{
+    width: 360px;
+    height: 210px;
+    background-repeat: no-repeat;
+    float: left;
+    margin-right: 30px;
+}
+#new-product .bg1{
+    background-image: url(../img/bg1.jpg);
+}
+#new-product .bg2{
+    background-image: url(../img/bg2.jpg);
+}
+#new-product .bg3 {
+    background-image: url(../img/bg3.jpg);
+    margin-right: 0px;
+}
+/*  new-product结束  */
+
+/*      product开始   */
+#product .product-info{
+    width: 340px;
+    height: 440px;
+    margin-top: 30px;
+    margin-left: 30px;
+    border: 1px solid #ccc;
+    float: left;
+    position: relative;
+}
+.new{
+    color: #fff;
+    background: #fa558f;
+    /*float: right;*/
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.product-info img{
+    width: 248px;
+    height: 248px;
+    border: solid 1px #ccc;
+    vertical-align: bottom;
+}
+.product-detail{
+    height: 152px;
+    padding: 20px 20px;
+    background: #ccc;
+}
+.product-detail input{
+    width: 150px;
+    height: 30px;
+    text-indent: 10px;
+    outline: none;
+}
+.add{
+    width: 150px;
+    height: 50px;
+    background: orange;
+    color: #fff;
+    border: 0;
+    margin-top: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/*      product结束   */
