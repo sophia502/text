@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>input</title>
+    <style>
+        li{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="search">
+    <ul id="result">
+        <li>iphone</li>
+        <li>huawei</li>
+        <li>xiaomi</li>
+    </ul>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            $("#search").on("keyup",function(){
+                $("#result li").css("background","transparent") //transparent透明的
+                if($(this).val() != ""){
+                    $("#result li:contains(" +$(this).val().toLowerCase()+")").css("background","#f00");//toLowerCase 不区分大小写（大写转小写）
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
