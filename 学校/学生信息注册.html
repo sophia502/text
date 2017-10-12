@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>学生信息注册</title>
+</head>
+<body>
+
+<form action="">
+    <div>
+        学号：<input type="number"  id="nub"  min="1"/>
+    </div>
+    <div>
+        姓名：<input type="text" id="name"/>
+    </div>
+    <div>
+        性别  <input type="radio" name="sex" id="sex" value="1"/>Male <input type="radio" name="sex" value="2"/>Female
+    </div>
+    <div>
+        年龄  <input type="number" min="1" id="age"/>
+    </div>
+    <div>
+        课程方向 <select name="" >
+        <option value="">c语言</option>
+        <option value="">c++</option>
+        <option value="">java</option>
+        <option value="">java web</option>
+    </select>
+    </div>
+
+
+    擅长的程序语言 <label > <input type="checkbox"/>Java</label>
+    <label > <input type="checkbox"/>C</label>
+    <label > <input type="checkbox"/>C++</label>
+    <label > <input type="checkbox"/>C#</label>
+
+    <br/>
+    <input type="submit" value="Submit" id="sub"/>
+    <input type="submit" value="Submit">
+</form>
+
+<script>
+    (function(){
+        var oNub = document.getElementById('nub');
+        var oName = document.getElementById('name');
+        var oAge = document.getElementById('age');
+        var oSub = document.getElementById('sub');
+        var oSex = document.getElementById('sex');
+        oNub.onkeyup = function(){
+            if(oNub.value.length > 10){
+                oNub.value = oNub.value.substring(0,10);
+            }
+        };
+
+        oAge.onkeyup = function(){
+            if(oAge.value < 1){
+                oAge.value = "";
+            }
+        };
+
+//        console.log(oSex.value);
+        oSub.onclick = function(){
+            if(oName.value == "") {
+                alert("姓名不能为空");
+            }
+//                }else {
+//                    if (oName.value.indexOf(" " == -1)) {
+//                        console.log(oName.value);
+//                        alert("姓名不能是空格或空格开头");
+//                        oName.value = null;
+//                    }
+
+//            if(!oSex[0].checked && !oSex[1].checked){
+//                alert('请输入性别');
+//            }
+            if(oNub.value.length < 10){
+                alert("输入10位学号");
+            }
+        };
+    })()
+</script>
+
+</body>
+</html>
