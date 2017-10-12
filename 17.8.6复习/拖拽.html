@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+        };
+    </script>
+
+</head>
+<body>jqapi-1.9.rar
+    <div id="div"></div>
+    <script>
+        var oDiv = document.getElementById('div');
+        oDiv.onmousedown = function(e){
+            var disX = e.clientX - oDiv.offsetLeft;
+            var disY = e.clientY - oDiv.offsetTop;
+            document.onmousemove = function(e){
+                oDiv.style.left = e.clientX - disX + "px";
+                oDiv.style.top = e.clientY - disY +"px";
+            };
+            oDiv.onmouseup = function(){
+                document.onmousemove = 'none';
+            };
+        };
+    </script>
+</body>
+</html>
