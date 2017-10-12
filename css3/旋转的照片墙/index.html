@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>旋转的照片墙</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<div id="next"></div>
+<div id="prev"></div>
+<script>
+    (function(){
+        var oContainer = document.getElementById("container");
+        var Row = 4,Col = 6, NUM = Row * Col, BIG_W = 750, BIG_H = 500, THUMB_W = THUMB_H = 125;
+        var count = 0;
+        for( var i= 0; i<NUM; i++){
+            var oBigImg = new Image();
+            oBigImg.onload = function () {
+                count++;
+                if(count == NUM *2){
+                    loadSuccess();
+                }
+            };
+            oBigImg.src = "img/"+ (i + 1) +".jpg";
+
+            var oThumbImg = new Image();
+        }
+
+        function loadSuccess(){
+            for( var i=0; i<Row; i++){
+                for( var j=0; j<Col; j++) {
+
+                }
+            }
+        }
+
+
+    })();
+
+</script>
+</body>
+</html>
