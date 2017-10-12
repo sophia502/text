@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>折叠菜单mm</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #container{
+            border: 1px solid   #000;
+            width: 200px;
+            text-align: center;
+        }
+        #container h2{
+            color: #fff;
+            background: #000000;
+            cursor: pointer;
+        }
+        #container ul li:hover{
+            background: #cccccc;
+        }
+        #container .submenu{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul id="container">
+        <li>
+            <h2>管理区</h2>
+            <ul class="submenu">
+                <li>001</li>
+                <li>002</li>
+                <li>003</li>
+            </ul>
+        </li>
+        <li>
+            <h2>交流区</h2>
+            <ul class="submenu">
+                <li>001</li>
+                <li>002</li>
+                <li>003</li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+var oContainer=document.getElementById("container");
+var aH2=oContainer.getElementsByTagName("h2");
+//        console.log(aH2);
+var aUl=oContainer.getElementsByTagName("ul");
+        for(var i=0;i<aH2.length;i++){
+            aH2[i].index=i;
+
+            aH2[i].onclick=function() {
+//                aUl[this.index].style.display="block";
+//                aUl[this.index].className = "";
+
+                if (aUl[this.index].style.display == "block") {
+                    aUl[this.index].style.display = "none";
+                } else {
+                    aUl[this.index].style.display = "block";
+                }
+            };
+            }
+
+
+//            aH2[i].bFlag=false;
+
+//            if(this.bFlag){
+//                aUl[this.index].style.display="none";
+//            }else{
+//                aUl[this.index].style.display="block";
+//            }
+//            this.bFlag = !this.bFlag;
+//        }
+
+    </script>
+</body>
+</html>
