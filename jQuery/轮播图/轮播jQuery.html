@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>轮播图jq</title>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    #imgs img{
+        display: none;
+    }
+    #imgs .select{
+        display: block;
+    }
+    #container{
+        width: 680px;
+        position: relative;
+        margin: 100px auto;
+    }
+    #nav{
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+    }
+    #nav li ,#arrows span{
+        list-style:none;
+        width: 20px;
+        height: 20px;
+        background: #000000;
+        color: #fff;
+        float: left;
+        cursor: pointer;
+        text-align: center;
+        line-height: 20px;
+        margin-right: 5px;
+    }
+    #nav .select{
+        background: orange ;
+    }
+    #arrows{
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+    }
+
+</style>
+</head>
+<body>
+        <div id="container">
+            <div id="imgs">
+                <img src="img2/1.jpg" alt="" class="select" >
+                <img src="img2/2.jpg" alt="">
+                <img src="img2/3.jpg" alt="">
+                <img src="img2/4.jpg" alt="">
+            </div>
+            <ul id="nav">
+                <li class="select">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+            <div id="arrows">
+                <span id="prev">&lt</span>
+                <span  id="next">&gt</span>
+            </div>
+        </div>
+        <script src="jquery-1.12.4.js"></script>
+        <script>
+            $(function(){
+                var nowIndex = 0;
+                var timer;
+                $("#nav li").on("mouseover",function(){
+                    nowIndex = $(this).index();
+                    $("#nav li").eq($(this).index()).addClass("select").siblings().removeClass("select");
+                    $("#imgs img").eq($(this).index()).addClass("select").siblings().removeClass("select");
+                });
+                $("#prev").on("click",function(){
+                    nowIndex--;
+                    if(nowIndex == -1){
+                        nowIndex = $("#nav li").length - 1;
+                    }
+                    changeImg();
+                });
+                $("#next").on("click",function(){
+                    nowIndex++;
+                    if(nowIndex ==  $("#nav li").length){
+                        nowIndex = 0;
+                    }
+                    changeImg();
+                });
+                play();
+                function play(){
+                    timer = setInterval(function(){
+                        $("#next").trigger("click");
+                    },1000)
+                }
+                $("#container").hover(function(){
+                            clearInterval(timer);
+                        },function(){
+                          play();
+                        }
+                );
+                function changeImg(){
+                    $("#nav li").eq(nowIndex).addClass("select").siblings().removeClass("select");
+                    $("#imgs img").eq(nowIndex).addClass("select").siblings().removeClass("select");
+                }
+            });
+        </script>
+</body>
+</html>
