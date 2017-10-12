@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用CSS绝对定位实现元素水平垂直居中</title>
+    <style type="text/css">
+        *{
+            margin: 0 ;
+            padding: 0;
+            border: 0;
+        }
+        .wrap{
+            width: 100%;
+            height: 900px;
+            position: relative;
+            overflow: hidden;
+        }
+        .banner {
+            height: 400px;
+            overflow: hidden;
+        }
+        .banner {
+            position: absolute;
+            top:0;
+            left: 50%;
+            margin-left: -50px;
+        }
+        .banner img{
+            height: 400px;
+        }
+        .banner p{
+            position: absolute;
+            top: 30%;
+            width: 100%;
+            padding: 50px 0;
+            text-align: center;
+            font-size: 30px;
+            color: #fff;
+            font-family: 'Merienda-Regular';
+            text-shadow: 2px 2px 10px #000;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="banner">
+        <img src="personal%20website/img/bg1.jpg">
+        <p>HELLO WORLD</p>
+    </div>
+</div>
+</body>
+</html>
