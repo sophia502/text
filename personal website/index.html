@@ -5,27 +5,63 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
     <title>my home</title>
-    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/index.css"/>
 </head>
 
 <body>
 <!-----------头开始--------------->
     <div id="head">
         <!-- 导航-->
-
             <div id="big-nav">
-                <div id="name">
-                    <img src="img/1.png" alt=""/>
+                <img src="img/1.png" id="p-name" alt=""/>
+                <span></span>
+                <div class="nav-button" id="n-btn">
+                    <span class="nos"></span>
+                    <span class="ncs"></span>
+                    <span class="nbs"></span>
                 </div>
-                <div id="a-line"></div>
-                <div id="navigation"></div>
             </div>
             <ul id="s-nav">
-                <li>About</li>
-                <li>Resume</li>
-                <li>Services</li>
-                <li>Skills</li>
-                <li>Clients</li>
+                <li class="b-a"><a href="">关于我</a>
+                    <ul class="s-list">
+                        <li><a href="">性别：女</a></li>
+                        <li><a href="">爱好：唱歌</a></li>
+                        <li><a href="">自我评价</a></li>
+                    </ul>
+                </li>
+                <li class="b-a">
+                    <a href="">我的简历</a>
+                    <ul class="s-list">
+                        <li><a href="">学校</a></li>
+                        <li><a href="">奖项</a></li>
+                        <li><a href="">每年经历</a></li>
+                    </ul>
+                </li>
+                <li class="b-a">
+                    <a href="">我的作品</a>
+                    <ul class="s-list">
+                        <li><a href="">小米官网仿写</a></li>
+                        <li><a href="">旋转的照片墙</a></li>
+                        <li><a href="">vue小例子</a></li>
+                    </ul>
+                </li>
+                <li class="b-a">
+                    <a href="">我的技能</a>
+                    <ul class="s-list">
+                        <li><a href="">HTML\CSS</a></li>
+                        <li><a href="">JS\JQ</a></li>
+                        <li><a href="">PHP\NODE</a></li>
+                    </ul>
+                </li>
+                <li class="b-a">
+                    <a href="">联系我</a>
+                    <ul class="s-list">
+                        <li><a href="">Phone</a></li>
+                        <li><a href="">QQ\WeChat</a></li>
+                        <li><a href="">E-Mail</a></li>
+                    </ul>
+                </li>
             </ul>
 
         <!-- 标题-->
@@ -317,6 +353,7 @@
     <div style="background: #f00;">1</div>
     <div style="background: #f00;">1</div>
     <div>1</div>
-</div>>
+</div>
+<script src="js/index.js"></script>
 </body>
 </html>
