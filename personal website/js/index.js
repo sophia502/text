@@ -1,3 +1,4 @@
+$(function(){
 var oButton = document.getElementById('n-btn');
 var oBignav = document.getElementById('big-nav');
 var oSnav = document.getElementById('s-nav');
@@ -25,3 +26,5 @@ for (var i=0;i<aliba.length;i++){
         oLine.style.transform = 'rotate(-45deg)';
     };
 }
+
+});
