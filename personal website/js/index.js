@@ -26,5 +26,36 @@ for (var i=0;i<aliba.length;i++){
         oLine.style.transform = 'rotate(-45deg)';
     };
 }
+var aTop = document.getElementById('to-top');
+aTop.onclick = function () {
+    var iScrollTop = document.documentElement.scrollTop ||document.body.scrollTop;
+    var timer = setInterval(function () {
+        window.scrollTo(0,iScrollTop*=0.6);
+        if (iScrollTop<=1){
+            clearInterval(timer);
+        }
+    },100);
+};
+
+var aLt = document.getElementById('lt');
+var aGt = document.getElementById('gt');
+var oWork = document.getElementById('work');
+var aWorks = oWork.getElementsByClassName('works');
+
+aGt.onclick = function () {
+
+    if(oWork.offsetLeft > -724){
+        animate(oWork,{left:oWork.offsetLeft - (aWorks[0].offsetWidth + 59)});
+        // oWork.style.left =  oWork.offsetLeft - (aWorks[0].offsetWidth + 60)  +'px';
+    }
+    console.log(oWork.offsetLeft);
+};
+aLt.onclick = function () {
+    if(oWork.offsetLeft < 0) {
+        animate(oWork,{left:oWork.offsetLeft + (aWorks[0].offsetWidth + 59)});
+        // oWork.style.left = oWork.offsetLeft + (aWorks[0].offsetWidth + 60) + 'px';
+    }
+    console.log(oWork.offsetLeft);
+};
 
 });
