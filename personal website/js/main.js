@@ -127,7 +127,7 @@ $(document).ready(function () {
 //    canvas
     var canvas = document.getElementsByTagName("canvas");
     var canvas2 = document.getElementsByTagName("canvas");
-    console.log(canvas);
+    // console.log(canvas);
     for(var i=0; i<canvas.length; i++){
         canvas[i].getContext("2d").strokeStyle = "#cfcfcf";
         canvas[i].getContext("2d").lineWidth = "4";
@@ -148,4 +148,32 @@ $(document).ready(function () {
     canvas2[1].getContext("2d").stroke();
     canvas2[2].getContext("2d").arc(79,79,75,-Math.PI/2,Math.PI*1.5*0.85);
     canvas2[2].getContext("2d").stroke();
+
+//    导航
+    var oNav = document.getElementById('nav');
+    var oHead = document.getElementById('head');
+    var aLi = oNav.getElementsByTagName('li');
+    var oLPart = document.getElementById('l-part2');
+    // console.log(oHead.getBoundingClientRect().bottom);
+    window.onscroll = function () {
+        if(oNav.getBoundingClientRect().top <= 0){
+            oNav.style.position = 'fixed';
+            oLPart.style.position = 'fixed';
+            oLPart.style.top = '70px';
+        }
+        if(oHead.getBoundingClientRect().bottom > 0){
+            oNav.style.position = 'relative';
+            oLPart.style.position = 'relative';
+            oLPart.style.top = '0px';
+        }
+    };
+    for(var i=0; i<aLi.length; i++){
+        aLi[i].onclick = function () {
+            for(var i=0;i<aLi.length;i++){
+                   aLi[i].className="";
+               }
+            this.className = 'select';
+        }
+    }
+
 });
