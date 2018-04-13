@@ -124,4 +124,28 @@ $(document).ready(function () {
             timeoutNav();
         }
     });
+//    canvas
+    var canvas = document.getElementsByTagName("canvas");
+    var canvas2 = document.getElementsByTagName("canvas");
+    console.log(canvas);
+    for(var i=0; i<canvas.length; i++){
+        canvas[i].getContext("2d").strokeStyle = "#cfcfcf";
+        canvas[i].getContext("2d").lineWidth = "4";
+        //绘制圆
+        canvas[i].getContext("2d").beginPath();
+        canvas[i].getContext("2d").arc(79,79,75,0,2*Math.PI);
+        canvas[i].getContext("2d").stroke();
+    }
+    for(var i=0; i<canvas2.length; i++){
+        canvas2[i].getContext("2d").strokeStyle = "#888888";
+        canvas2[i].getContext("2d").lineWidth = "4";
+        //绘制圆
+        canvas2[i].getContext("2d").beginPath();
+    }
+    canvas2[0].getContext("2d").arc(79,79,75,-Math.PI/2,Math.PI*1.5*0.6);
+    canvas2[0].getContext("2d").stroke();
+    canvas2[1].getContext("2d").arc(79,79,75,-Math.PI/2,Math.PI*1.5*0.9);
+    canvas2[1].getContext("2d").stroke();
+    canvas2[2].getContext("2d").arc(79,79,75,-Math.PI/2,Math.PI*1.5*0.85);
+    canvas2[2].getContext("2d").stroke();
 });
