@@ -154,26 +154,86 @@ $(document).ready(function () {
     var oHead = document.getElementById('head');
     var aLi = oNav.getElementsByTagName('li');
     var oLPart = document.getElementById('l-part2');
-    // console.log(oHead.getBoundingClientRect().bottom);
+    var oBio0 = document.getElementById('b-io');
+    var oVer = document.getElementById('vertical');
+    var oTitle = document.getElementById('l-title');
+    var oDo = document.getElementById('do');
+    var oSkill = document.getElementById('skill');
+    var oCont = document.getElementById('cont');
+    console.log(oNav.getBoundingClientRect().top);
     window.onscroll = function () {
         if(oNav.getBoundingClientRect().top <= 0){
             oNav.style.position = 'fixed';
             oLPart.style.position = 'fixed';
             oLPart.style.top = '70px';
+            out();
+            aLi[0].className = 'select';
         }
         if(oHead.getBoundingClientRect().bottom > 0){
             oNav.style.position = 'relative';
             oLPart.style.position = 'relative';
             oLPart.style.top = '0px';
+            aLi[0].className = 'select';
+        }
+
+        if(oBio0.getBoundingClientRect().top <= 150){
+            oVer.style.top = '-90vh';
+            oTitle.innerHTML = 'RESUME';
+            out();
+            aLi[1].className = 'select';
+        }
+        if(oBio0.getBoundingClientRect().top > 150){
+            oVer.style.top = '0';
+            oTitle.innerHTML = 'ABOUT';
+            out();
+            aLi[0].className = 'select';
+        }
+        if(oDo.getBoundingClientRect().top < 150){
+            oVer.style.top = '-180vh';
+            oTitle.innerHTML = 'WORKS';
+            out();
+            aLi[2].className = 'select';
+        }
+        if(oDo.getBoundingClientRect().top > 150 && oBio0.getBoundingClientRect().top <= 150){
+            oVer.style.top = '-90vh';
+            oTitle.innerHTML = 'RESUME';
+            out();
+            aLi[1].className = 'select';
+        }
+        if(oSkill.getBoundingClientRect().top < 150){
+            oVer.style.top = '-270vh';
+            oTitle.innerHTML = 'SKILLS';
+            out();
+            aLi[3].className = 'select';
+        }
+        if(oSkill.getBoundingClientRect().top > 150 && oDo.getBoundingClientRect().top <= 150){
+            oVer.style.top = '-180vh';
+            oTitle.innerHTML = 'WORKS';
+            out();
+            aLi[2].className = 'select';
+        }
+        if(oCont.getBoundingClientRect().top < 150){
+            oVer.style.top = '-360vh';
+            oTitle.innerHTML = 'CONTACT';
+            out();
+            aLi[4].className = 'select';
+        }
+        if(oCont.getBoundingClientRect().top > 150 && oSkill.getBoundingClientRect().top < 150){
+            oVer.style.top = '-270vh';
+            oTitle.innerHTML = 'SKILLS';
+            out();
+            aLi[3].className = 'select';
         }
     };
     for(var i=0; i<aLi.length; i++){
         aLi[i].onclick = function () {
-            for(var i=0;i<aLi.length;i++){
-                   aLi[i].className="";
-               }
+            out();
             this.className = 'select';
         }
     }
-
+    function out() {
+        for(var i=0;i<aLi.length;i++){
+            aLi[i].className="";
+        }
+    }
 });
