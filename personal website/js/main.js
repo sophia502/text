@@ -1,23 +1,26 @@
-'use strict';
 $(document).ready(function () {
-    var navigating = false, curPage = 1, pages = $('.section').length, $sections = $('.sections'), $paginationPage = $('.pagination .page'), $paginationTotal = $('.total-pages'), $textStuff = $('.section-heading, .additional-text');
+    var navigating = false,
+        curPage = 1,
+        pages = $('.section').length, //5
+        blength = $('.bg-part').length,
+        $sections = $('.sections'),
+        $paginationPage = $('.pagination .page'), //左侧数字1
+        $paginationTotal = $('.total-pages'), //左侧数字2
+        $textStuff = $('.section-heading, .additional-text');//右侧标题
     if (pages >= 10) {
         $paginationTotal.text(pages);
     } else {
         $paginationTotal.text('0' + pages);
     }
     function randomDelay() {
-        $('.left-part').css('transition-delay', (Math.floor(Math.random() * 9) + 4) / 10 + 's');
-        for (var i = 1; i <= pages; i++) {
-            if (window.CP.shouldStopExecution(1)) {
-                break;
-            }
-            $('.bg-part:nth-child(' + i + ')').css('transition-delay', (Math.floor(Math.random() * 9) + 4) / 10 + 's');
+        $('.left-part').css('transition-delay', (Math.floor(Math.random() * 9)/2) / 10 + 's');
+        // console.log(Math.floor(Math.random() * 9)/2);
+        for (var i = 1; i <= blength; i++) {
+            $('.bg-part:nth-child(' + i + ')').css('transition-delay', (Math.floor(Math.random() * 9)/2) / 10+ 's');
         }
-        window.CP.exitedLoop(1);
     }
     function timeoutNav(t) {
-        var time = t || 2000;
+        var time = t || 1000;
         $textStuff.addClass('not-visible');
         setTimeout(function () {
             navigating = false;
@@ -25,7 +28,7 @@ $(document).ready(function () {
         }, time);
         setTimeout(function () {
             $('.section-heading, .additional-text').css({ 'margin-top': 0 - (parseInt($('.nav-elem.active').attr('data-page')) - 1) * 100 + 'vh' }).hide();
-        }, 410);
+        }, 310);
         setTimeout(function () {
             $textStuff.show();
             $textStuff.css('top');
@@ -47,7 +50,7 @@ $(document).ready(function () {
         $('.main').css('top');
         magicStuff(page);
         $('.main').css('top');
-        $('.left-part, .bg-part').css('transition-duration', '0.8s');
+        $('.left-part, .bg-part').css('transition-duration', '0.3s');
         randomDelay();
     }
     function pagination(pg) {
@@ -178,49 +181,49 @@ $(document).ready(function () {
 
         if(oBio0.getBoundingClientRect().top <= 150){
             oVer.style.top = '-90vh';
-            oTitle.innerHTML = 'RESUME';
+            oTitle.innerHTML = '简历';
             out();
             aLi[1].className = 'select';
         }
         if(oBio0.getBoundingClientRect().top > 150){
             oVer.style.top = '0';
-            oTitle.innerHTML = 'ABOUT';
+            oTitle.innerHTML = '关于我';
             out();
             aLi[0].className = 'select';
         }
         if(oDo.getBoundingClientRect().top < 150){
             oVer.style.top = '-180vh';
-            oTitle.innerHTML = 'WORKS';
+            oTitle.innerHTML = '作品';
             out();
             aLi[2].className = 'select';
         }
         if(oDo.getBoundingClientRect().top > 150 && oBio0.getBoundingClientRect().top <= 150){
             oVer.style.top = '-90vh';
-            oTitle.innerHTML = 'RESUME';
+            oTitle.innerHTML = '简历';
             out();
             aLi[1].className = 'select';
         }
         if(oSkill.getBoundingClientRect().top < 150){
             oVer.style.top = '-270vh';
-            oTitle.innerHTML = 'SKILLS';
+            oTitle.innerHTML = '技能';
             out();
             aLi[3].className = 'select';
         }
         if(oSkill.getBoundingClientRect().top > 150 && oDo.getBoundingClientRect().top <= 150){
             oVer.style.top = '-180vh';
-            oTitle.innerHTML = 'WORKS';
+            oTitle.innerHTML = '作品';
             out();
             aLi[2].className = 'select';
         }
         if(oCont.getBoundingClientRect().top < 150){
             oVer.style.top = '-360vh';
-            oTitle.innerHTML = 'CONTACT';
+            oTitle.innerHTML = '联系我';
             out();
             aLi[4].className = 'select';
         }
         if(oCont.getBoundingClientRect().top > 150 && oSkill.getBoundingClientRect().top < 150){
             oVer.style.top = '-270vh';
-            oTitle.innerHTML = 'SKILLS';
+            oTitle.innerHTML = '技能';
             out();
             aLi[3].className = 'select';
         }

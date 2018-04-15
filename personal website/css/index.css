@@ -11,6 +11,8 @@ a{
 img{
     border: 0;
 }
+/*-------------Import fonts ---------------------------------------*/
+
 /*--------头开始-------*/
 html,body{
     height: 2000px;
@@ -387,10 +389,9 @@ margin-top: 30px;
     position: relative;
 }
 #data .s-l-part h3{
-    font-size: 26px;
-    font-family:'Merienda-Regular';
+    font-size: 23px;
     text-align: center;
-    margin-top: 16px;
+    margin-top: 23px;
 }
 #data .s-l-part::after{
     content: "";
@@ -417,8 +418,7 @@ margin-top: 30px;
     float: left;
 }
 #data .s-r-part .data-1 h3{
-    font-size: 8vw;
-    font-family:'Merienda-Regular';
+    font-size: 7vw;
 }
 #data .s-r-part .data-1 div{
     font-size: 13px;
@@ -436,9 +436,14 @@ margin-top: 30px;
 #bio{
     margin: 30px 0;
 }
+#bio p{
+    color: #ffc815;
+    margin-bottom: 5px;
+}
 #bio h3{
     font-weight: 500;
     margin-bottom: 7px;
+    font-size: 17px;
 }
 /*-----part2-end-----*/
 /*-----part3-start---*/
@@ -493,7 +498,6 @@ margin-top: 30px;
     margin:10px 20px 10px 20px ;
     font-size: 19px;
     font-weight: 300;
-    font-family:'Merienda-Regular';
 }
 .go{
     position: absolute;
@@ -575,7 +579,6 @@ canvas {
     float: left;
     width: 100%;
     margin: 10px 0;
-    font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     /*color: #666;*/
     text-align: center;
@@ -635,7 +638,6 @@ canvas {
 }
 .row{
     display: flex;
-    margin-bottom: 40px;
 }
 .col-md-4{
     flex-grow: 1;
@@ -647,7 +649,6 @@ canvas {
     /*color: #fff;*/
     position: relative;
     font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     text-align: left;
     margin-bottom: 45px;
@@ -734,6 +735,18 @@ input{
     margin-left: 46px;
     border: 1px solid #ffff00;
     cursor: pointer;
+}
+#cont{
+    position: relative;
+}
+.r-block{
+    width: 30px;
+    height:  64.8%;
+    background: #000000;
+    position: absolute;
+    right: -4.3%;
+    bottom: 0;
+
 }
 /*  part5  end*/
 /*------内容结束--------*/
